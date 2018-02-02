@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import leftArrow from '../../assets/rightArrow3.svg'
 import hamburger from '../../assets/hamburger3.svg'
+import LogoIMG from '../../assets/SVG/LogoWhite.svg'
 
 export default class NavBar extends Component {
 
@@ -18,6 +19,7 @@ export default class NavBar extends Component {
 
   render() {
     const { open } = this.state;
+    const { children } = this.props;
 
     return (
       <Container open={open}>
@@ -27,6 +29,10 @@ export default class NavBar extends Component {
           <Arrow open={open} src={leftArrow} />
         </CloseBtn>
         <RightBorder />
+        <MenuItems>
+
+        </MenuItems>
+        <Logo open={open} src={LogoIMG}/>
       </Container>
     )
   }
@@ -37,7 +43,7 @@ const Container = styled.div`
   background-color: #5638EF;
   transition: 0.3s;
   width:${props => props.open ? 550 : 70}px;
-  box-shadow: ${props => props.open ? 'none' : '0 0 0 50px rgba(25, 25, 84, 1)'}
+  box-shadow: ${props => props.open ? '0 0 50px 10px rgba(25, 25, 84, .2)' : 'none'}
 `
 const RightBorder = styled.div`
   margin-left: 100%;
@@ -81,8 +87,8 @@ const MenuBox = styled.div`
   height: 70px;
   transition: .3s;
   cursor: pointer;
-  border-bottom: 0.5px solid #5B7EFF;
-  opacity: ${props => props.open ? 0 : 1};
+  ${'' /* border-bottom: 0.5px solid #5B7EFF; */}
+  display: ${props => props.open ? 'none' : 'block'};
 
   &:hover {
     border-bottom: none;
@@ -97,4 +103,21 @@ const Menu = styled.img`
   height: 30px;
   cursor: pointer;
   pointer-events: none;
+`
+const MenuItems = styled.div`
+  position: absolute;
+  top: 100px;
+  left: 0;
+  transition: .3s;
+  width: ${props => props.open ? '380px' : '0px'};
+  height: calc(100vh - 150px);
+`
+const Logo = styled.img`
+  margin: 0 auto;
+  position: absolute;
+  bottom: ${props => props.open ? '30px' : '80px'};
+  left: ${props => props.open ? '200px' : '-40px'};
+  transition: 0.3s;
+  transform: ${props => props.open ? 'none' : 'rotate(-90deg)'};
+  width: 150px;
 `
