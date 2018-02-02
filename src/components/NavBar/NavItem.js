@@ -13,15 +13,21 @@ export default class NavItem extends Component {
   }
 
   onMouseOver = () => {
+    const { onOpen } = this.props
+
     this.setState({hover: true});
+    onOpen()
   }
 
   onMouseLeave = () => {
+    const { onOpen } = this.props
+
     this.setState({hover: false});
+    onOpen()
   }
 
   render() {
-    const { index, path, text, tagline } = this.props
+    const { index, path, text, tagline, active } = this.props
     const { hover } = this.state
     return (
       <Container
@@ -29,13 +35,14 @@ export default class NavItem extends Component {
         onMouseLeave={this.onMouseLeave}
         to={path}
         >
+          {console.log(active)}
         <Index>
           {0 + index}
         </Index>
-        <Text hover={hover}>
+        <Text hover={hover} active={active}>
           {text}
         </Text>
-        <Tagline hover={hover}>
+        <Tagline hover={hover} active={active}>
           {tagline}
         </Tagline>
         <Line hover={hover}/>
@@ -50,13 +57,14 @@ const Container = styled(Link)`
   width: 350px;
 `
 const Index = styled.h3`
-  font-family: ${props => props.theme.bodyFont};
+  font-family: ${props => props.theme.navFont};
   font-size: 12pt;
-  font-weight: 700;
+  font-weight: 600;
   color: white;
   opacity: 0.3;
   transform: rotate(-90deg);
   width: 20px;
+  pointer-events: none;
 `
 const Text = styled.h1`
   font-family: ${props => props.theme.navFont};
@@ -64,8 +72,9 @@ const Text = styled.h1`
   font-weight: 800;
   color: white;
   margin: -25px 0 0 25px;
-  opacity: ${props => props.hover ? 1 : 0.3};
+  opacity: ${props => props.hover ? 1 : props.active ? 1 : 0.3};
   transition: .3s;
+  pointer-events: none;
 `
 const Tagline = styled.h4`
   margin: 5px 0 0 25px;
@@ -74,7 +83,8 @@ const Tagline = styled.h4`
   font-weight: 400;
   color: #48D7B5;
   transition: 0.3s;
-  opacity ${props => props.hover ? 1 : 0.3};
+  opacity ${props => props.hover ? 1 : props.active ? 1 : 0.3};
+  pointer-events: none;
 `
 const Line = styled.div`
   margin: -50px 0 0 0;
@@ -84,4 +94,5 @@ const Line = styled.div`
   height: 8px;
   background-color: #48D7B5;
   transition: 0.2s;
+  pointer-events: none;
 `

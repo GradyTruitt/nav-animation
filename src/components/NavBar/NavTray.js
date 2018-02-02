@@ -13,7 +13,6 @@ export default class NavBar extends Component {
 
   handleClick = () => {
     const { open } = this.state
-
     open ? this.setState({ open: false }) : this.setState({ open: true });
   }
 
