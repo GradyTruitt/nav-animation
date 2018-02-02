@@ -10,9 +10,8 @@ export default {
   green: '#36C97A',
   boxShadow: '1px 3px 30px -2px rgba(0, 0, 200, .25)',
   // fonts
-  bodyFont: 'roboto, sans-serif',
-  headingFont: 'League-Gothic, sans-serif',
-  navFont: 'roboto, sans-serif',
+  bodyFont: 'Source Sans Pro',
+  navFont: 'Montserrat',
   // screen sizes
   xl: 1250,
   desktop: 950,

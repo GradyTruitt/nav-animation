@@ -29,8 +29,8 @@ export default class NavBar extends Component {
           <Arrow open={open} src={leftArrow} />
         </CloseBtn>
         <RightBorder />
-        <MenuItems>
-
+        <MenuItems open={open}>
+          {children}
         </MenuItems>
         <Logo open={open} src={LogoIMG}/>
       </Container>
@@ -40,7 +40,7 @@ export default class NavBar extends Component {
 
 const Container = styled.div`
   height: 100vh;
-  background-color: #5638EF;
+  background-color: #19334B;
   transition: 0.3s;
   width:${props => props.open ? 550 : 70}px;
   box-shadow: ${props => props.open ? '0 0 50px 10px rgba(25, 25, 84, .2)' : 'none'}
@@ -87,12 +87,11 @@ const MenuBox = styled.div`
   height: 70px;
   transition: .3s;
   cursor: pointer;
-  ${'' /* border-bottom: 0.5px solid #5B7EFF; */}
   display: ${props => props.open ? 'none' : 'block'};
 
   &:hover {
     border-bottom: none;
-    border-left: 70px solid #5B7EFF;
+    border-left: 70px solid #48D7B5;
   }
 `
 const Menu = styled.img`
@@ -107,10 +106,10 @@ const Menu = styled.img`
 const MenuItems = styled.div`
   position: absolute;
   top: 100px;
-  left: 0;
+  left: ${props => props.open ? 0 : '-460px'};
   transition: .3s;
-  width: ${props => props.open ? '380px' : '0px'};
-  height: calc(100vh - 150px);
+  width: 460px;
+  height: auto;
 `
 const Logo = styled.img`
   margin: 0 auto;
