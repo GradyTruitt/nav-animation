@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import leftArrow from '../../assets/rightArrow3.svg'
 import hamburger from '../../assets/hamburger3.svg'
 import LogoIMG from '../../assets/SVG/LogoWhite.svg'
+import Mountains from '../../assets/mountain.png'
 
 export default class NavBar extends Component {
 
@@ -38,11 +39,16 @@ export default class NavBar extends Component {
 }
 
 const Container = styled.div`
+  position: fixed;
   height: 100vh;
-  background-color: #19334B;
+  background-image: url(${Mountains});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #1C295F;
   transition: 0.3s;
   width:${props => props.open ? 550 : 70}px;
-  box-shadow: ${props => props.open ? '0 0 50px 10px rgba(25, 25, 84, .2)' : 'none'}
+  box-shadow: ${props => props.open ? '0 0 60px 30px rgba(0, 0, 0, .4)' : 'none'};
+  z-index: 1000;
 `
 const RightBorder = styled.div`
   margin-left: 100%;

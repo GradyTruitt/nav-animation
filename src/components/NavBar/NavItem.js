@@ -35,7 +35,6 @@ export default class NavItem extends Component {
         onMouseLeave={this.onMouseLeave}
         to={path}
         >
-          {console.log(active)}
         <Index>
           {0 + index}
         </Index>
@@ -71,13 +70,14 @@ const Text = styled.h1`
   font-size: 42pt;
   font-weight: 800;
   color: white;
-  margin: -25px 0 0 25px;
+  margin: -30px 0 0 30px;
   opacity: ${props => props.hover ? 1 : props.active ? 1 : 0.3};
   transition: .3s;
   pointer-events: none;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, .25)
 `
 const Tagline = styled.h4`
-  margin: 5px 0 0 25px;
+  margin: 5px 0 0 30px;
   font-family: ${props => props.theme.bodyFont};
   font-size: 14pt;
   font-weight: 400;
