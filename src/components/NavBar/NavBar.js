@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import Media from 'react-media'
 
-import NavTray from './NavTray'
+import DesktopNavTray from './Desktop/DesktopNavTray'
+import MobileNavTray from './Mobile/MobileNavTray'
 import NavItem from './NavItem'
 
 const nav = [
@@ -34,21 +36,43 @@ export default class NavBar extends Component {
   render() {
     const { active } = this.state
     return (
-      <NavTray>
-        {nav.map((item, i) => {
-          return (
-            <NavItem
-              key={i}
-              onOpen={this.onOpen.bind(this)}
-              index={i.toString()}
-              path={item.path}
-              text={item.text}
-              tagline={item.tagline}
-              active={active}
-            />
-          )
-        })}
-      </NavTray>
+      <Media query='(max-width: 950px)'>
+        {
+          matches => matches
+          ?
+          <MobileNavTray>
+            {nav.map((item, i) => {
+              return (
+                <NavItem
+                  key={i}
+                  onOpen={this.onOpen.bind(this)}
+                  index={i.toString()}
+                  path={item.path}
+                  text={item.text}
+                  tagline={item.tagline}
+                  active={active}
+                />
+              )
+            })}
+          </MobileNavTray>
+          :
+          <DesktopNavTray>
+            {nav.map((item, i) => {
+              return (
+                <NavItem
+                  key={i}
+                  onOpen={this.onOpen.bind(this)}
+                  index={i.toString()}
+                  path={item.path}
+                  text={item.text}
+                  tagline={item.tagline}
+                  active={active}
+                />
+              )
+            })}
+          </DesktopNavTray>
+        }
+      </Media>
     )
   }
 }

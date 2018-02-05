@@ -54,6 +54,11 @@ const Container = styled(Link)`
   display: block;
   margin: 80px auto;
   width: 350px;
+
+  @media (max-width: 950px){
+    margin: 50px auto;
+    width: 270px;
+  }
 `
 const Index = styled.h3`
   font-family: ${props => props.theme.navFont};
@@ -74,7 +79,11 @@ const Text = styled.h1`
   opacity: ${props => props.hover ? 1 : props.active ? 1 : 0.3};
   transition: .3s;
   pointer-events: none;
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, .25)
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, .25);
+
+  @media (max-width: 950px){
+    font-size: 34pt;
+  }
 `
 const Tagline = styled.h4`
   margin: 5px 0 0 30px;
@@ -85,6 +94,10 @@ const Tagline = styled.h4`
   transition: 0.3s;
   opacity ${props => props.hover ? 1 : props.active ? 1 : 0.3};
   pointer-events: none;
+
+  @media (max-width: 950px){
+    font-size: 12pt;
+  }
 `
 const Line = styled.div`
   margin: -50px 0 0 0;
@@ -95,4 +108,8 @@ const Line = styled.div`
   background-color: #48D7B5;
   transition: 0.2s;
   pointer-events: none;
+
+  @media (max-width: 950px){
+    display: none;
+  }
 `

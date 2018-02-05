@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import leftArrow from '../../assets/rightArrow3.svg'
-import hamburger from '../../assets/hamburger3.svg'
-import LogoIMG from '../../assets/SVG/LogoWhite.svg'
-import Mountains from '../../assets/mountain.png'
+import leftArrow from '../../../assets/rightArrow3.svg'
+import hamburger from '../../../assets/hamburger3.svg'
+import LogoIMG from '../../../assets/SVG/LogoWhite.svg'
+import Mountains from '../../../assets/mountain.png'
 
 export default class NavBar extends Component {
 

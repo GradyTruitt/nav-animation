@@ -5,18 +5,15 @@ import { fadeInUp, slideInRight, slideInLeft } from 'react-animations'
 import Img1 from '../../assets/header1.jpg'
 import LogoImg from '../../assets/SVG/mainLogo.svg'
 import LogoImg2 from '../../assets/SVG/secondaryLogo.svg'
+import code from '../../assets/code.jpg'
+
+import Title from './Title'
 
 export default () => (
   <Fragment>
     <Container>
       <Overlay>
-        <Logo src={LogoImg} />
-        <Title>
-          Pioneers of Innovation.
-        </Title>
-        <Subtitle>
-          Enabling the full productive potential of individuals by breaking down barriers that inhibit innovation
-        </Subtitle>
+        <Title/>
       </Overlay>
     </Container>
     <Section1>
@@ -30,6 +27,9 @@ export default () => (
         2018
       </ESTTxt>
     </Section1>
+    <Section2>
+
+    </Section2>
   </Fragment>
 )
 
@@ -39,35 +39,26 @@ const SlideLeft = keyframes`${slideInLeft}`
 
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh - 160px);
+  ${'' /* height: calc(100vh - 160px); */}
   background-image: url(${Img1});
-  text-align: center;
+  background-position: center center;
+
+  @media (max-width: 950px){
+    background-size: 160%;
+    background-repeat: no-repeat;
+  }
 `
 const Overlay = styled.div`
   padding: 250px 150px 80px;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content:space-between;
   background: linear-gradient(0deg, rgba(240, 240, 247, 1) 20%, rgba(240, 240, 247, 0.2));
-`
-const Title = styled.h1`
-  margin: 120px 0 30px;
-  font-family: ${props => props.theme.bodyFont};
-  font-weight: 500;
-  font-style: italic;
-  ${'' /* text-transform: uppercase; */}
-  font-size: 40pt;
-  color: #438CFB;
-  animation: 0.6s ${FadeInUpAnimaiton};
-`
-const Subtitle = styled.h2`
-  margin: 0 auto;
-  font-family: ${props => props.theme.bodyFont};
-  font-size: 22pt;
-  line-height: 30pt;
-  font-weight: 200;
-  color: #576579;
-  width: 60%;
-  animation: 0.6s ${FadeInUpAnimaiton};
+
+  @media (max-width: 950px){
+    padding: 120px 5% 80px;
+  }
 `
 const Logo = styled.img`
   width: 600px;
@@ -97,6 +88,10 @@ const ESTTxt = styled.h5`
     text-align: right;
     animation: 1s ${SlideLeft};
   }
+
+  @media (max-width: 950px){
+    width: 30%;
+  }
 `
 const Circle = styled.div`
   margin: 20px;
@@ -112,6 +107,11 @@ const Circle = styled.div`
 const Logo2 = styled.img`
   margin: 0 6px 2px 0;
   width: 40px;
+`
+const Section2 = styled.div`
+  padding: 60px 30px;
+  background-image: url(${code});
+  background-size: cover;
 `
 /* Carousel Info Below */
 
