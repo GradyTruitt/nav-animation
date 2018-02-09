@@ -60,6 +60,7 @@ const Subtitle = styled.p`
   color: #576579;
   animation: 0.5s ${SlideIn};
 `
+
 const Button = styled(Link)`
   color: white;
   font-size: 12pt;

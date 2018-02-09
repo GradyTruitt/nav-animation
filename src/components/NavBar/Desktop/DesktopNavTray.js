@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import leftArrow from '../../../assets/rightArrow3.svg'
-import hamburger from '../../../assets/hamburger3.svg'
 import LogoIMG from '../../../assets/SVG/LogoWhite.svg'
 import Mountains from '../../../assets/mountain.png'
+import Hamburger from '../HamburgerIcon'
 
 export default class NavBar extends Component {
 
@@ -23,11 +22,7 @@ export default class NavBar extends Component {
 
     return (
       <Container open={open}>
-        <MenuBox open={open} onClick={this.handleClick} />
-        <Menu open={open} src={hamburger} />
-        <CloseBtn open={open} onClick={this.handleClick}>
-          <Arrow open={open} src={leftArrow} />
-        </CloseBtn>
+        <Hamburger open={open} click={this.handleClick}/>
         <RightBorder />
         <MenuItems open={open}>
           {children}
@@ -55,58 +50,6 @@ const RightBorder = styled.div`
   height: 100vh;
   width: 3px;
   background-color: #48D7B5;
-`
-const CloseBtn = styled.div`
-  position: absolute;
-  top: 50%;
-  margin: ${props => props.open ? '-40px 0 0 505px' : '-40px 0 0 25px'};
-  width: 45px;
-  height: 60px;
-  border-radius: 30px 0 0 30px;
-  background-color: #48D7B5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.3s;
-  opacity: ${props => props.open ? 1 : 0};
-
-  &:hover {
-    width: 55px;
-    height: 70px;
-    border-radius: 35px 0 0 35px;
-    margin: ${props => props.open ? '-45px 0 0 495px' : '-45px 0 0 25px'};
-    transition: 0.3s;
-  }
-`
-const Arrow = styled.img`
-  margin: 0 0 0 5px;
-  width: 15px;
-  cursor: pointer;
-  transition: 0.2s;
-  visibility: ${props => props.open ? 'auto' : 'hidden'};
-`
-const MenuBox = styled.div`
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  transition: .3s;
-  cursor: pointer;
-  display: ${props => props.open ? 'none' : 'block'};
-
-  &:hover {
-    border-bottom: none;
-    border-left: 70px solid #48D7B5;
-  }
-`
-const Menu = styled.img`
-  opacity: ${props => props.open ? 0 : 1};
-  position: absolute;
-  margin: 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  pointer-events: none;
 `
 const MenuItems = styled.div`
   position: absolute;

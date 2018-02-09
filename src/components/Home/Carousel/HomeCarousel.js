@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Carousel, Dot } from '../Carousel'
+import { Carousel, Dot } from '../../Carousel'
 import Slide from './Slide'
 
 export default ({ slides }) => (
