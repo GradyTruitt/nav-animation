@@ -2,13 +2,10 @@ import { injectGlobal } from 'styled-components'
 
 export default {
   // colors
-  primaryColor: '#2E3948',
-  secondaryColor: '#95989A',
-  lightBlue: '#35AAF4',
-  purple: '#624DD6',
-  pink: '#E91E63',
-  green: '#36C97A',
-  boxShadow: '1px 3px 30px -2px rgba(0, 0, 200, .25)',
+  primaryColor: '#1C164E',
+  secondaryColor: '#40DDDF',
+  hoverColor: '#2182A9',
+  almondColor: '#FCF2E4',
   // fonts
   bodyFont: "'Source Sans Pro'",
   navFont: 'Montserrat',

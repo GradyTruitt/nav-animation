@@ -74,7 +74,7 @@ const Text = styled.h1`
   font-family: ${props => props.theme.navFont};
   font-size: 42pt;
   font-weight: 800;
-  color: white;
+  color: ${props => props.theme.almondColor};
   margin: -30px 0 0 30px;
   opacity: ${props => props.hover ? 1 : props.active ? 1 : 0.3};
   transition: .3s;
@@ -90,7 +90,7 @@ const Tagline = styled.h4`
   font-family: ${props => props.theme.bodyFont};
   font-size: 14pt;
   font-weight: 400;
-  color: #48D7B5;
+  color: ${props => props.theme.secondaryColor};
   transition: 0.3s;
   opacity ${props => props.hover ? 1 : props.active ? 1 : 0.3};
   pointer-events: none;
@@ -105,7 +105,7 @@ const Line = styled.div`
   right: -20px;
   width: ${props => props.hover ? 100 : 0}px;
   height: 8px;
-  background-color: #48D7B5;
+  background-color: ${props => props.theme.secondaryColor};
   transition: 0.2s;
   pointer-events: none;
 

@@ -40,7 +40,7 @@ const Container = styled.div`
   background-image: url(${Mountains});
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #1C295F;
+  background-color: ${props => props.theme.primaryColor};
   transition: 0.3s;
   width: 100%;
   box-shadow: ${props => props.open ? '0 0 60px 30px rgba(0, 0, 0, .4)' : 'none'};
@@ -52,7 +52,7 @@ const BottomBorder = styled.div`
   height: 3px;
   width: 100%;
   transition-duration: 0.3s;
-  background-color: #48D7B5;
+  background-color: ${props => props.theme.secondaryColor};
   transition-delay: ${props => props.open ? 'none' : '0.2s'};
 `
 const MenuItems = styled.div`

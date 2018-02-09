@@ -39,7 +39,7 @@ const Container = styled.div`
   background-image: url(${Mountains});
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #1C295F;
+  background-color: ${props => props.theme.primaryColor};
   transition: 0.3s;
   width:${props => props.open ? 550 : 70}px;
   box-shadow: ${props => props.open ? '0 0 60px 30px rgba(0, 0, 0, .4)' : 'none'};
@@ -49,7 +49,7 @@ const RightBorder = styled.div`
   margin-left: 100%;
   height: 100vh;
   width: 3px;
-  background-color: #48D7B5;
+  background-color: ${props => props.theme.secondaryColor};
 `
 const MenuItems = styled.div`
   position: absolute;

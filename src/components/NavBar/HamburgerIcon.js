@@ -29,33 +29,26 @@ const Container = styled.div`
 const Bar = styled.div`
   width: 30px;
   height: 2px;
-  background-color: white;
+  background-color: ${props => props.theme.almondColor};
   transform-origin: center;
-  transition-duration: 0.3s;
+  transition-duration: 1s;
   opacity: ${props => props.open ? 0 : 1};
-  transition-delay: ${props => props.open ? '0' : '0.5'};
 
   ${Container}:hover & {
-    border-left: 30px solid #48D7B5;
+    border-left: 30px solid ${props => props.theme.secondaryColor};
   }
 
   &:first-of-type {
     margin-bottom: ${props => props.open ? '-2px' : 0};
-    transition-duration: 0.5s;
+    transition-duration: 0.7s;
     transform: ${props => props.open ? 'rotate(405deg)' : 'none'};
     opacity: 1;
-    transition-delay: 0;
-    ${Container}:hover & {
-    }
   }
 
   &:last-of-type {
     margin-top: ${props => props.open ? '-2px' : 0};
-    transition-duration: 1s;
+    transition-duration: 0.4s;
     transform: ${props => props.open ? 'rotate(-405deg)' : 'none'};
     opacity: 1;
-    transition-delay: 0;
-    ${Container}:hover & {
-    }
   }
 `
