@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
 
-import NavBar from './components/NavBar/NavBar'
+// import NavBar from './components/NavBar/NavBar'
+import NavBar from './components/NavBar2/NavBar'
 import Home from './components/Home'
 
 export default () => (

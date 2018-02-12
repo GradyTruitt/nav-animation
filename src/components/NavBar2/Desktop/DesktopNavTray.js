@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import gsap from '../../../utils/Animations'
 
 import LogoIMG from '../../../assets/SVG/LogoWhite.svg'
 import Mountains from '../../../assets/mountain.png'
@@ -15,6 +16,11 @@ export default class NavBar extends Component {
   handleClick = () => {
     const { open } = this.state
     open ? this.setState({ open: false }) : this.setState({ open: true });
+    this.openTray();
+  }
+
+  openTray = () => {
+    gsap.toggleDesktopNav(this.state.open);
   }
 
   render() {
@@ -22,13 +28,13 @@ export default class NavBar extends Component {
     const { children } = this.props;
 
     return (
-      <Container open={open}>
+      <Container id='nav-tray'>
         <Hamburger open={open} click={this.handleClick}/>
         <RightBorder />
-        <MenuItems open={open}>
+        <MenuItems id='nav-items'>
           {children}
         </MenuItems>
-        <Logo open={open} src={LogoIMG}/>
+        <Logo id='nav-logo' src={LogoIMG}/>
       </Container>
     )
   }
@@ -41,9 +47,7 @@ const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-color: ${props => props.theme.primaryColor};
-  transition: 0.3s;
-  width:${props => props.open ? 550 : 70}px;
-  box-shadow: ${props => props.open ? '0 0 60px 30px rgba(0, 0, 0, .4)' : 'none'};
+  width:70px;  box-shadow: none;
   z-index: 1000;
 `
 const RightBorder = styled.div`
@@ -55,17 +59,15 @@ const RightBorder = styled.div`
 const MenuItems = styled.div`
   position: absolute;
   top: 100px;
-  left: ${props => props.open ? 0 : '-460px'};
-  transition: .3s;
+  left: -460px;
   width: 460px;
   height: auto;
 `
 const Logo = styled.img`
   margin: 0 auto;
   position: absolute;
-  bottom: ${props => props.open ? '30px' : '80px'};
-  left: ${props => props.open ? '180px' : '-40px'};
-  transition: 0.3s;
-  transform: ${props => props.open ? 'none' : 'rotate(-90deg)'};
+  bottom: 80px;
+  left: -40px;
+  transform: rotate(-90deg);
   width: 150px;
 `

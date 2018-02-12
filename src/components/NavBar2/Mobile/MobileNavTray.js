@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 import LogoIMG from '../../../assets/SVG/LogoWhite.svg'
 import Mountains from '../../../assets/mountain.png'
+
 import Hamburger from '../HamburgerIcon'
 
 export default class NavBar extends Component {
-
 
   state = {
     open: false
@@ -23,12 +23,12 @@ export default class NavBar extends Component {
 
     return (
       <Container open={open}>
+        <Logo open={open} src={LogoIMG}/>
         <Hamburger open={open} click={this.handleClick}/>
-        <RightBorder />
+        <BottomBorder open={open}/>
         <MenuItems open={open}>
           {children}
         </MenuItems>
-        <Logo open={open} src={LogoIMG}/>
       </Container>
     )
   }
@@ -36,36 +36,36 @@ export default class NavBar extends Component {
 
 const Container = styled.div`
   position: fixed;
-  height: 100vh;
+  height: ${props => props.open ? 460 : 70}px;
   background-image: url(${Mountains});
   background-size: cover;
   background-repeat: no-repeat;
   background-color: ${props => props.theme.primaryColor};
   transition: 0.3s;
-  width:${props => props.open ? 550 : 70}px;
+  width: 100%;
   box-shadow: ${props => props.open ? '0 0 60px 30px rgba(0, 0, 0, .4)' : 'none'};
   z-index: 1000;
+  transition-delay: ${props => props.open ? 'none' : '0.2s'};
 `
-const RightBorder = styled.div`
-  margin-left: 100%;
-  height: 100vh;
-  width: 3px;
+const BottomBorder = styled.div`
+  margin-top: ${props => props.open ? 460 : 70}px;
+  height: 3px;
+  width: 100%;
+  transition-duration: 0.3s;
   background-color: ${props => props.theme.secondaryColor};
+  transition-delay: ${props => props.open ? 'none' : '0.2s'};
 `
 const MenuItems = styled.div`
   position: absolute;
-  top: 100px;
-  left: ${props => props.open ? 0 : '-460px'};
+  top: 80px;
+  left: ${props => props.open ? 0 : '-100%'};
   transition: .3s;
-  width: 460px;
+  width: 100%;
   height: auto;
 `
 const Logo = styled.img`
-  margin: 0 auto;
   position: absolute;
-  bottom: ${props => props.open ? '30px' : '80px'};
-  left: ${props => props.open ? '180px' : '-40px'};
-  transition: 0.3s;
-  transform: ${props => props.open ? 'none' : 'rotate(-90deg)'};
+  left: 15px;
+  top: 25px;
   width: 150px;
 `
