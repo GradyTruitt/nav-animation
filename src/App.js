@@ -8,7 +8,9 @@ import Home from './components/Home'
 export default () => (
   <Container>
     <NavBar />
-    <Home />
+    <Switch>
+      <Route path='/' comonent={Home} />
+    </Switch>
   </Container>
 )
 const Container = styled.div`
