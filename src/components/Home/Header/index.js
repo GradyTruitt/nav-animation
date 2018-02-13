@@ -1,22 +1,22 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
-import homeBG1 from '../../assets/homeBG1.jpg'
-import headerAccent from '../../assets/SVG/headerAccent.svg'
+import homeBG1 from '../../../assets/homeBG1.jpg'
+import headerAccent from '../../../assets/SVG/headerAccent.svg'
 
-export default () => (
+export default ({children}) => (
   <Fragment>
     <Container>
       <HeaderBar src={headerAccent}/>
+      {children}
     </Container>
     <BlueBar />
   </Fragment>
 )
 
 const Container = styled.div`
-  padding: 0 0 0 73px;
+  padding: 0 0 150px 73px;
   width: 100%;
-  height: 800px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 83%);
   background-image:url(${homeBG1});
@@ -40,7 +40,7 @@ const BlueBar = styled.div`
   height: 30px;
   background-color: ${props => props.theme.secondaryColor};
   transform-origin: center;
-  transform:skewX(20deg) rotate(5.5deg);
+  transform:skewX(20deg) rotate(5deg);
 
   @media (max-width: 950px) {
     display: none;

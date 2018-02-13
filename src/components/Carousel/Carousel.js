@@ -139,21 +139,21 @@ export default class Slider extends Component {
 
 const CarouselContainer = styled.div`
   box-sizing: border-box;
-  position: relative;
-  width: 100%;
+  ${'' /* position: relative; */}
+  width: 90%;
   margin: 0 auto;
 `
 const DotsContainer = styled.ul`
   position: absolute;
   display: inline-block;
-  margin: -35px auto;
+  margin: 0 auto;
   padding: 0;
   left: 50%;
   transform: translateX(-50%);
 `
 const ButtonContainer = styled.div`
   position: absolute;
-  left: 20px;
-  right: 20px;
-  top: 50%;
+  left: 73px;
+  right: 0;
+  top: 40%;
 `

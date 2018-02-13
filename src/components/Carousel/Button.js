@@ -4,9 +4,8 @@ export const Button = styled.div`
   width: 52px;
   height: 52px;
   color: white;
-  border-radius: 50%;
-  border: 2px solid white;
-  background-color: #6252d3;
+  border-radius: ${props => props.left ? '0px 5px 5px 0px' : '5px 0px 0px 5px'};
+  background-color: rgba(18, 12, 68, 0.5);
   display: inline-block;
   position: absolute;
   top: 40%;
@@ -30,8 +29,7 @@ export const Button = styled.div`
   }
 
   &:hover {
-    color: white;
-    border: 2px solid white;
-    background-color: #3dabf1;
+    cursor: pointer;
+    background-color: ${props => props.theme.secondaryColor};
   }
 `

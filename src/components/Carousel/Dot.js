@@ -2,11 +2,12 @@ import styled from 'styled-components'
 
 export const Dot = styled.li`
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   cursor: pointer;
   border-radius: 50%;
-  background-color: ${props => (props.isActive ? '#3dabf1' : '#e0e4fb')};
+  border: 1px solid white;
+  background-color: ${props => (props.isActive ? 'white' : 'transparent')};
 
   &:not(:last-child) {
     margin-right: 10px;

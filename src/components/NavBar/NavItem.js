@@ -53,7 +53,6 @@ export default class NavItem extends Component {
 const Container = styled(Link)`
   display: block;
   margin: 120px auto 80px;
-  margin: 120px auto 80px;
   width: 350px;
   opacity: 0;
 
