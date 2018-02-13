@@ -13,8 +13,7 @@
     "react-swipeable-views": "^0.12.12",
     "react-swipeable-views-core": "^0.12.11",
     "react-swipeable-views-utils": "^0.12.11",
-    "styled-components": "^2.4.0",
-    "svg-to-react-cli": "^1.5.0"
+    "styled-components": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
