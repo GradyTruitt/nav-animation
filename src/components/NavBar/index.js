@@ -7,17 +7,17 @@ import NavItem from './NavItem'
 
 const nav = [
   {
-    path: '/services',
+    path: '/',
     text: 'Services',
     tagline: 'Take a look at what we offer.'
   },
   {
-    path: '/company',
+    path: '/',
     text: 'Company',
     tagline: 'Let us tell you about our company.'
   },
   {
-    path: '/contact',
+    path: '/',
     text: 'Contact',
     tagline: 'Have a question? Drop us a line.'
   }
