@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import gsap from '../../../utils/Animations'
+import gsap from './Animations'
 
 import LogoIMG from '../../../assets/SVG/LogoWhite.svg'
 import Mountains from '../../../assets/mountain.png'

@@ -31,7 +31,6 @@ export default class NavItem extends Component {
     const { hover } = this.state
     return (
       <Container
-        className='nav-item'
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseLeave}
         to={path}
@@ -59,7 +58,7 @@ const Container = styled(Link)`
   opacity: 0;
 
   @media (max-width: 950px){
-    margin: 50px auto;
+    margin: 80px auto;
     width: 270px;
   }
 `
