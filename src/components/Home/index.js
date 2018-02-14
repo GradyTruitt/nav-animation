@@ -11,12 +11,16 @@ const slides = [
     path: '/'
   },
   {
-    title: 'Slide 2',
-    subTitle: 'SubTitle'
+    title: 'Technical Expertise',
+    subTitle: 'Fueled by innovation.',
+    buttonText: 'WORK WITH US',
+    path: '/'
   },
   {
-    title: 'Slide 3',
-    subTitle: 'SubTitle'
+    title: 'Web App Development',
+    subTitle: 'Built on modern frameworks.',
+    buttonText: 'OUR DEV PROCESS',
+    path: '/'
   }
 ]
 

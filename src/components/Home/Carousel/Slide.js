@@ -80,6 +80,7 @@ const Title = styled.h1`
 
   @media (max-width: 550px) {
     font-size: 36pt;
+    line-height: 34pt;
     text-align: center;
   }
 `
@@ -124,6 +125,6 @@ const Button = styled(Link)`
   }
 
   @media (max-width: 550px) {
-    margin: 20px auto;
+    margin: 20px auto 0;
   }
 `
