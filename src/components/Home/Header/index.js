@@ -17,7 +17,7 @@ export default ({children}) => (
 const Container = styled.div`
   padding: 0 0 150px 73px;
   width: 100%;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 83%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 83%);
   background-image:url(${homeBG1});
   background-position: center bottom;
@@ -25,7 +25,13 @@ const Container = styled.div`
   background-size: cover;
 
   @media (max-width: 950px) {
-    padding: 0;
+    padding: 80px 0 120px;
+  }
+
+  @media (max-width: 550px) {
+    padding: 80px 0 60px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   }
 `
 const HeaderBar = styled.img`

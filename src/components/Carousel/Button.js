@@ -8,7 +8,7 @@ export const Button = styled.div`
   background-color: rgba(18, 12, 68, 0.5);
   display: inline-block;
   position: absolute;
-  top: 40%;
+  ${'' /* top: 40%; */}
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 1.9em;

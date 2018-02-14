@@ -2,18 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import HashBox from '../../styled/HashBackground/HashBox'
-import Hash from '../../styled/HashBackground/HashLine'
-
 export default ({ title, subTitle, buttonText, path }) => (
   <Container >
     <Content>
       <Title>
         {title}
       </Title>
-      <Divider>
-        <Hash />
-      </Divider>
       <SubTitle>
         {subTitle}
       </SubTitle>
@@ -34,10 +28,15 @@ export default ({ title, subTitle, buttonText, path }) => (
 )
 const Container = styled.div`
   margin: 0 auto 25px;
-  height: 500px;
+  height: 350px;
   width: 95%;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 550px) {
+    width: 100%;
+    height: 280px;
+  }
 `
 const Content = styled.div`
   width: 50%;
@@ -46,6 +45,10 @@ const Content = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `
 const Graphics = styled.div`
   margin-left: 40px;
@@ -53,6 +56,10 @@ const Graphics = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 550px) {
+    display: none;
+  }
 `
 const Title = styled.h1`
   margin-bottom: 15px;
@@ -65,12 +72,16 @@ const Title = styled.h1`
   text-align: left;
   letter-spacing: -3px;
   line-height: 55pt;
-  ${'' /* text-transform: uppercase; */}
-`
-const Divider = HashBox.extend`
-  margin: 10px 0;
-  width: 200px;
-  height: 10px;
+
+  @media (max-width: 950px) {
+    font-size: 44pt;
+    line-height: 40pt;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 36pt;
+    text-align: center;
+  }
 `
 const SubTitle = styled.h1`
   font-size: 30pt;
@@ -80,6 +91,15 @@ const SubTitle = styled.h1`
   font-weight: 500;
   font-style: italic;
   font-family: ${props => props.theme.bodyFont};
+
+  @media (max-width: 950px) {
+    font-size: 22pt;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 18pt;
+    text-align: center;
+  }
 `
 const Button = styled(Link)`
   margin: 20px 0;
@@ -97,5 +117,13 @@ const Button = styled(Link)`
     color: ${props => props.theme.secondaryColor};
     background: white;
     box-shadow: 0 0 10px 5px rgba(28, 27, 71, 0.3);
+  }
+
+  @media (max-width: 950px) {
+    margin: 30px 0;
+  }
+
+  @media (max-width: 550px) {
+    margin: 20px auto;
   }
 `

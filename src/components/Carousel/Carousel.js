@@ -145,17 +145,20 @@ const CarouselContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  @media (max-width: 950px) {
+    width: 98%;
+  }
 `
 const DotsContainer = styled.ul`
   position: absolute;
   display: inline-block;
   margin: 0 auto;
   padding: 0;
-  transform: translateX(-50%);
 `
 const ButtonContainer = styled.div`
   position: absolute;
   left: 73px;
   right: 0;
-  top: 50%;
+  top: 40%;
 `
