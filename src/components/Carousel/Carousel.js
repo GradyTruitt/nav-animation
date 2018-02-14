@@ -142,18 +142,20 @@ const CarouselContainer = styled.div`
   ${'' /* position: relative; */}
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 `
 const DotsContainer = styled.ul`
   position: absolute;
   display: inline-block;
   margin: 0 auto;
   padding: 0;
-  left: 50%;
   transform: translateX(-50%);
 `
 const ButtonContainer = styled.div`
   position: absolute;
   left: 73px;
   right: 0;
-  top: 40%;
+  top: 50%;
 `

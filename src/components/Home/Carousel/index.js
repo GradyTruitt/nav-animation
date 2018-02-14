@@ -6,7 +6,7 @@ import Slide from './Slide'
 export default ({slides}) => (
   <Carousel
     slides={slides}
-    interval={5000}
+    interval={8000}
     buttonComponent={Button}
     dotComponent={Dot}
     slideRenderer={slideProps => <Slide {...slideProps} />}

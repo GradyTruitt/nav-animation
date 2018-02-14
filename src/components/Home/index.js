@@ -5,8 +5,10 @@ import Carousel from './Carousel'
 
 const slides = [
   {
-    title: 'Slide 1',
-    subTitle: 'SubTitle'
+    title: 'Software Engineering',
+    subTitle: 'for the modern web.',
+    buttonText: 'LEARN MORE',
+    path: '/'
   },
   {
     title: 'Slide 2',

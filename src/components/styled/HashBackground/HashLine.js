@@ -16,7 +16,7 @@ const Hash = styled.div`
   position: relative;
   left: -100px;
   top: -50px;
-  width: 1px;
+  width: 2px;
   height: 200%;
   min-height: 200px;
   background-color: ${props => props.theme[props.color || 'secondaryColor']};
