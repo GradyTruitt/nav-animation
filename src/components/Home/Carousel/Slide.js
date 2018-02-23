@@ -67,7 +67,7 @@ const Title = styled.h1`
   width: 100%;
   font-weight: 700;
   font-family: ${props => props.theme.navFont};
-  color: ${props => props.theme.secondaryColor};
+  color: white;
   text-shadow:  0px 0px 10px rgba(0, 0, 0, 0.3);
   text-align: left;
   letter-spacing: -3px;
@@ -87,11 +87,12 @@ const Title = styled.h1`
 const SubTitle = styled.h1`
   font-size: 30pt;
   width: 100%;
-  color: white;
+  color: ${props => props.theme.secondaryColor};
   text-align: left;
   font-weight: 500;
   font-style: italic;
   font-family: ${props => props.theme.bodyFont};
+  text-shadow:  0px 0px 10px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 950px) {
     font-size: 22pt;

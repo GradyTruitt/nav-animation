@@ -9,6 +9,11 @@ export default {
   // fonts
   bodyFont: "'Source Sans Pro'",
   navFont: 'Montserrat',
+  //weights
+  light: 300,
+  regular: 400,
+  semiBold: 600,
+  bold: 700,
   // screen sizes
   xl: 1250,
   desktop: 950,
